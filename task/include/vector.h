@@ -61,7 +61,7 @@ public:
      * @param index Индекс элемента (0 <= index < N)
      * @return Константная ссылка на элемент
      */
-    const T& operator[](size_t index) const {
+    T operator[](size_t index) const {
         return data_[index];
     }
 
@@ -86,7 +86,7 @@ public:
      * @return Константная ссылка на элемент
      * @throw std::out_of_range Если index >= N
      */
-    const T& at(size_t index) const {
+    T at(size_t index) const {
         if (index >= N) {
             throw std::out_of_range("Index out of range");
         }
@@ -291,4 +291,4 @@ Vector<T, N> operator*(T scalar, const Vector<T, N>& vec) {
     return vec * scalar;
 }
 
-#endif // VECTOR_H
+#endif  // VECTOR_H
